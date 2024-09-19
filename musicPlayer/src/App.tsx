@@ -1,6 +1,7 @@
 import React from 'react';
-import { ActivityIndicator, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { addTrack, setupPlayer } from '../musicServices';
+import MusicPlayer from './screen/MusicPlayer';
 
 
 
@@ -35,12 +36,17 @@ const App = () => {
 
 
   return (
-    <View>
-      <Text>App</Text>
+    <View style={styles.container}>
+        <StatusBar barStyle={'light-content'} />
+        <MusicPlayer />
     </View>
   );
 };
 
 export default App;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    container:{
+        flex:1
+    }
+});
